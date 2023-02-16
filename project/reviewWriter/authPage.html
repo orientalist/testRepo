@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Google API 授權</title>
+</head>
+
+<body>
+    <button id="signin-button">Sign in with Google</button>
+
+    <script>
+        // 以下參數需根據您的應用程式設定進行更改
+        var clientId = '354082970050-gvst203l9ohcmct9t5d4krp1gl8q4niu.apps.googleusercontent.com';
+        var secret = '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';
+        var redirectUri = 'https://www.def.com';
+        //var scope = 'https://www.googleapis.com/auth/plus.business.manage';
+        const signinButton = document.getElementById("signin-button");
+        signinButton.addEventListener("click", () => {
+            window.location = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile&response_type=code`;
+        });
+    </script>
+</body>
+
+</html>
